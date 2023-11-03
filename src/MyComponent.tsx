@@ -1,5 +1,5 @@
 import { Configuration } from '@pollination-solutions/pollination-sdk'
-import { useAPIClient, AuthUser, SelectRecipe, SelectProject, SelectAccount } from 'pollination-react-io'
+import { useAPIClient, AuthUser, SelectAccount, CreateStudy } from 'pollination-react-io'
 import { Account } from 'pollination-react-io/build/SelectAccount/SelectAccount.types'
 import React, { useEffect, useMemo, useState } from 'react'
 import { Forma } from 'forma-embedded-view-sdk/auto'
@@ -50,6 +50,10 @@ export const MyComponent: React.FC<MyComponentProps> = ({
           authUser={authUser} 
           onChange={handleOnChange} />
         <div><pre>{accountInfo}</pre></div>
+
+        {/* TODO: Uncomment to check, it raises error because of CORS */}
+        {/* <CreateStudy client={client.current}
+          authUser={authUser} /> */}
       </div>
     </div>
   )
