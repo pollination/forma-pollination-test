@@ -33,7 +33,7 @@ export const MyComponent: React.FC<MyComponentProps> = ({
         .then(setBuildingPaths)
     }
     fetchData()
-  }, [])
+  }, [password])
 
   return (
     <div className="App">
