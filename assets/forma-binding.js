@@ -7,15 +7,18 @@ window.dash_clientside = Object.assign({}, window.dash_clientside, {
         const urn = await Forma.proposal.getRootUrn();
         const paths = await Forma.selection.getSelection();
 
+        const triangles = await Forma.geometry.getTriangles({
+          path: "root",
+          excludedPaths: [paths[0]],
+        });
+
         if (paths.length) {
           const volumes = await geoApi.EXPERIMENTAL_getVolume25DCollection({
             urn,
             path: paths[0],
           });
 
-          console.log({ urn, paths, volumes });
-
-          resolve(JSON.stringify(volumes));
+          resolve(JSON.stringify({ volumes, triangles }));
         } else {
           resolve([]);
         }
