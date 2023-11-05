@@ -16,7 +16,7 @@ app.layout = html.Div(
         html.Button("Analyze", id="button", n_clicks=0),
         html.Br(),
         dcc.Store(id="geometry"),
-        dcc.Store(id="result", storage_type='local'),
+        dcc.Store(id="result"),
         dcc.Store(id="void")
     ]
 )
