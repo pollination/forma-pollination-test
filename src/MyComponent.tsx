@@ -50,10 +50,8 @@ export const MyComponent: React.FC<MyComponentProps> = ({
           authUser={authUser} 
           onChange={handleOnChange} />
         <div><pre>{accountInfo}</pre></div>
-
-        {/* TODO: Uncomment to check, it raises error because of CORS */}
-        {/* <CreateStudy client={client.current}
-          authUser={authUser} /> */}
+        <CreateStudy client={client.current}
+          authUser={authUser} />
       </div>
     </div>
   )
